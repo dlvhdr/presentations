@@ -42,7 +42,7 @@ date: "DD MMMM, YYYY"
 - The CLI doesn't have to be that boring interface, it can be **GLAMOROUS** 🌈
 - Companies like [Charm](https://charm.sh/) are writing tools for making it so
 - Microsoft launched WSL in 2016 (_Windows Subsystem For Linux_) which let Windows users join the party
-  - And they finally made `cmd` look good! [](https://github.com/microsoft/terminal)
+  - And they also launched the new [Windows Terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=en-il&gl=il)
 - And [Warp](https://www.warp.dev/) are reimagining the terminal
 
 ---
@@ -56,7 +56,7 @@ date: "DD MMMM, YYYY"
   - `youtube-dl https://youtu.be/dQw4w9WgXcQ -q -o - | ffmpeg -i - piping_commands.mp4`
 - Simple text input, keyboard oriented
 - Hackable & Scriptable
-- Many GUI apps exist solely as a friendier but weaker abstraction over a CLI tool
+- Many GUI apps exist solely as a friendlier but weaker abstraction over a CLI tool
   - Knowing the CLI equivalent gives more power
   - E.g git, package managers
 - As a developer you're already in the CLI quite a lot
@@ -267,9 +267,29 @@ For this we'll use the [Charm](https://charm.sh) suite of libraries:
 
 # The Reinassance of the Command Line
 
+## Charm's CLI libraries
+
+```bash
+tmux splitw -v -l 35 ssh git.charm.sh
+```
+
+### Notable Libraries
+
+- Soft Serve
+- Gum
+- Bubbletea
+- Bubbles
+- Lipgloss
+- Glow
+- Glamour
+
+---
+
+# The Reinassance of the Command Line
+
 ## Writing a Roulette
 
-First, some Go knowledge before we go.
+Now, to use Charm's libs we need some Go knowledge.
 
 ```bash
 tmux neww -n "Learning Go" "curl cheat.sh/go/:learn | less -r"
@@ -302,26 +322,6 @@ tmux neww -n "Learning Go" "curl cheat.sh/go/:learn | less -r"
 - ** Message**
   - This is how the user interacts with out app.
   - It causes update to get fired with the message as the context.
-
----
-
-# The Reinassance of the Command Line
-
-## Charm's CLI libraries
-
-```bash
-tmux splitw -v -l 25 ssh git.charm.sh
-```
-
-### Notable Libraries
-
-- Soft Serve
-- Gum
-- Bubbletea
-- Bubbles
-- Lipgloss
-- Glow
-- Glamour
 
 ---
 
