@@ -5,7 +5,7 @@ theme: ./theme.json
 date: "DD MMMM, YYYY"
 ---
 
-# The Reinassance of the Command Line
+# The Renaissance of the Command Line
 
 >⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣟⣛⡻⢿⣻⡿⠛⢹⢮⠄⢀⠌⠈⠂⠑⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 >⣿⣿⣿⣿⣿⣿⠽⠿⢫⢽⣯⣿⣾⣿⣝⢻⢓⢾⡗⠘⠉⠁⠀⠀⠀⢀⣀⣀⣈⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -35,7 +35,7 @@ date: "DD MMMM, YYYY"
 
 ---
 
-# The Reinassance of the Command Line
+# The Renaissance of the Command Line
 
 ## CLI Apps
 
@@ -47,7 +47,7 @@ date: "DD MMMM, YYYY"
 
 ---
 
-# The Reinassance of the Command Line
+# The Renaissance of the Command Line
 
 ## Benefits of using the CLI
 
@@ -66,7 +66,7 @@ date: "DD MMMM, YYYY"
 
 ---
 
-# The Reinassance of the Command Line
+# The Renaissance of the Command Line
 
 ## Examples of CLI apps
 
@@ -78,7 +78,7 @@ tmux splitw -v bash -c "draw"
 
 ---
 
-# The Reinassance of the Command Line
+# The Renaissance of the Command Line
 
 ## Examples of CLI apps
 
@@ -90,7 +90,7 @@ tmux splitw -v -l 30 bash -c "confetty"
 
 ---
 
-# The Reinassance of the Command Line
+# The Renaissance of the Command Line
 
 ## Examples of CLI apps
 
@@ -103,7 +103,7 @@ tmux splitw -h -l 50 "~/code/playground/gum/examples/magic.sh"
 
 ---
 
-# The Reinassance of the Command Line
+# The Renaissance of the Command Line
 
 ## Examples of CLI apps
 
@@ -117,7 +117,7 @@ tmux splitw 'gh search prs "org:wix-private" --limit 5; fish -i'
 
 ---
 
-# The Reinassance of the Command Line
+# The Renaissance of the Command Line
 
 ## Examples of CLI apps
 
@@ -133,7 +133,7 @@ tmux neww -n "gh dash" gh dash
 
 ---
 
-# The Reinassance of the Command Line
+# The Renaissance of the Command Line
 
 ## How do CLI apps work
 
@@ -145,7 +145,7 @@ tmux neww -n "gh dash" gh dash
 
 ---
 
-# The Reinassance of the Command Line
+# The Renaissance of the Command Line
 
 ## Escape Sequences
 
@@ -175,7 +175,7 @@ For example:
 
 ---
 
-# The Reinassance of the Command Line
+# The Renaissance of the Command Line
 
 ## Escape Sequences
 
@@ -191,7 +191,7 @@ echo -e "\033[1;31mHello\033[0m"
 
 ---
 
-# The Reinassance of the Command Line
+# The Renaissance of the Command Line
 
 ## Escape Sequences
 
@@ -212,7 +212,7 @@ for i in range(0, 16):
 
 ---
 
-# The Reinassance of the Command Line
+# The Renaissance of the Command Line
 
 ## Escape Sequences
 
@@ -227,7 +227,7 @@ tmux splitw -v -l 35 "curl -L https://bit.ly/3A5B3u3 | python3 | less -R"
 
 ---
 
-# The Reinassance of the Command Line
+# The Renaissance of the Command Line
 
 ## Escape Sequences
 
@@ -245,7 +245,7 @@ echo -e '\033[25;25H😽\033[25;30H😽\033[25;35H😽'
 
 ---
 
-# The Reinassance of the Command Line
+# The Renaissance of the Command Line
 
 ## Let's write a simple CLI app
 
@@ -265,7 +265,7 @@ For this we'll use the [Charm](https://charm.sh) suite of libraries:
 
 ---
 
-# The Reinassance of the Command Line
+# The Renaissance of the Command Line
 
 ## Writing a Roulette
 
@@ -277,7 +277,7 @@ tmux neww -n "Learning Go" "curl cheat.sh/go/:learn | less -r"
 
 ---
 
-# The Reinassance of the Command Line
+# The Renaissance of the Command Line
 
 ## The Elm Architecture
 
@@ -305,7 +305,7 @@ tmux neww -n "Learning Go" "curl cheat.sh/go/:learn | less -r"
 
 ---
 
-# The Reinassance of the Command Line
+# The Renaissance of the Command Line
 
 ## Charm's CLI libraries
 
@@ -325,7 +325,7 @@ tmux splitw -v -l 25 ssh git.charm.sh
 
 ---
 
-# The Reinassance of the Command Line
+# The Renaissance of the Command Line
 
 ## Bubbletea
 
@@ -340,7 +340,7 @@ type model struct {
 
 ---
 
-# The Reinassance of the Command Line
+# The Renaissance of the Command Line
 
 ## Bubbletea
 
@@ -360,7 +360,7 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 ---
 
-# The Reinassance of the Command Line
+# The Renaissance of the Command Line
 
 ## Bubbletea
 
@@ -380,7 +380,7 @@ func (m Model) View() string {
 
 ---
 
-# The Reinassance of the Command Line
+# The Renaissance of the Command Line
 
 ## Demo - let's write it!
 
@@ -390,7 +390,7 @@ tmux neww fish -c "cd ./roulette; git checkout skeleton; nvim main.go"
 
 ---
 
-# The Reinassance of the Command Line
+# The Renaissance of the Command Line
 
 ## Reources
 
