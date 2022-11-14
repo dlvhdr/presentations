@@ -37,7 +37,20 @@ date: "DD MMMM, YYYY"
 
 # The Reinassance of the Command Line
 
-## CLI Apps
+## Agenda
+
+* Intro
+* Benefits of using the CLI
+* Examples of CLI apps
+* How do CLI apps work
+* Charm's CLI libraries
+* The Elm Architecture
+* Let's write a simple CLI app
+
+
+---
+
+# The Reinassance of the Command Line
 
 - The CLI doesn't have to be that boring interface, it can be **GLAMOROUS** 🌈
 - Companies like [Charm](https://charm.sh/) are writing tools for making it so
@@ -73,7 +86,7 @@ date: "DD MMMM, YYYY"
 ### draw
 
 ```bash
-tmux splitw -v bash -c "draw"
+tmux set mouse on; tmux splitw -v bash -c "draw"
 ```
 
 ---
@@ -98,7 +111,7 @@ tmux splitw -v -l 30 bash -c "confetty"
 
 ```bash
 bat -f ./magic-tldr.sh
-tmux splitw -h -l 50 "~/code/playground/gum/examples/magic.sh"
+tmux splitw -h -l 50 "~/code/personal/playground/gum/examples/magic.sh"
 ```
 
 ---
@@ -257,6 +270,20 @@ E.g:
 - Who's next to go in the daily
 - etc...
 
+```bash
+tmux splitw -v -l 20 fish -c "\
+      cd ~/code/personal/roulette;\
+      git checkout tutorial/03-finished 2>1 /dev/null;\
+      go run . 🍕 🍔 🥓 🌯 🥒 🍗;
+      sleep 1"
+```
+
+---
+
+# The Reinassance of the Command Line
+
+## Building Roulette
+
 For this we'll use the [Charm](https://charm.sh) suite of libraries:
 
 - We're gonna learn a _little bit_ of Go
@@ -290,6 +317,13 @@ tmux splitw -v -l 35 ssh git.charm.sh
 ## Writing a Roulette
 
 Now, to use Charm's libs we need some Go knowledge.
+Why Go for CLI apps?
+* Modern language with garbage collection, `goroutines`, `channels`, ...
+* Compiles into a single binary - trivial installation 
+* Fast to run - important for CLI apps
+* Works across platforms with a consistent style
+* Strong development community (`charm`, `cobra`, `viper`...)
+* Builtin tooling: linter, formatter, package manager - all consistent
 
 ```bash
 tmux neww -n "Learning Go" "curl cheat.sh/go/:learn | less -r"
@@ -303,12 +337,12 @@ tmux neww -n "Learning Go" "curl cheat.sh/go/:learn | less -r"
 
 ```
 ~~~graph-easy --as=boxart
-[  ELM Runtime ]
+[  ELM Runtime ] . fires .> [  message ]
 [  user input ] . fires .> [  message ]
 [  message ] -> [  update ]
+[  update ] . commands .> [  ELM Runtime ]
 [  update ] -> [  model ]
 [  model ] -> [  view ]
-[  view ] - fires -> [  message ]
 ~~~
 ```
 
@@ -333,8 +367,8 @@ tmux neww -n "Learning Go" "curl cheat.sh/go/:learn | less -r"
 
 ```go
 type model struct {
-  title   string // Optional
   options []string
+  currId int
 }
 ```
 
@@ -385,7 +419,7 @@ func (m Model) View() string {
 ## Demo - let's write it!
 
 ```bash
-tmux neww fish -c "cd ./roulette; git checkout skeleton; nvim main.go"
+tmux neww fish -c "cd ~/code/personal/roulette; git checkout tutorial/01-skeleton; nvim main.go"
 ```
 
 ---

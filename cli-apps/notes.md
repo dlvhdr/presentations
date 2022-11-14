@@ -202,26 +202,55 @@ Go over:
 
 One last concept we need to know in order to use Charm's Bubbletea lib, is the Elm architecture.
 Think of it like a React's app lifecycle.
+Bubbletea's runtime (that's used to run our app) uses this architecture.
 
 We first define a Model.
 This model represents our app's state. It's a simple object we define. 
 In it, we need to store all the information we need to render our UI.
 
-Given a Model, the ELM runtime calls our "View" function, which we use to return a string. That string is our UI!
+Given a Model, the ELM runtime calls our "View" function, which we use to return a string.
+Remember, terminals only display text, so that string is actually our UI!
 
 Now that we know that given a Model we render a View, we need a way to change the model.
 
 That's where the Update function comes in.
 This function recieves a message when "things happen".
 Here, we write logic to update the model, depending on what happened.
-
 Messages are the way we declare what happened.
-
 User input is just one thing that might happen, but it could also be a timer firing, a network call that was returned, a file read from disk etc.
+
+In addition to that, the update function can retrun commands.
+Commands are functions that bubbletea runs for us, asynchronously, that return a new message.
+Those messages will also eventually be sent to the update function to create our runtime loop.
+
+For anyone who's familiar with Redux, the model is the state, messages are actions and commands are action creators.
 
 ---
 
+Now let's see how to use bubbletea to write our app using the ELM architecture.
 For our Roulette app, we need a very simple model.
-We need to hold the 
+We first need to hold the options the user passed in when they ran the app.
+Then we only need one more property, `currId` which is the current tick cycle the app's in.
+
+---
+
+Next the Update function.
+This function, as we said recieves the current model, and a message of what happened.
+It then returns the updated model.
+
+It can produce addional messages with something called a command.
+We'll see it later in action.
+
+---
+
+The final piece is the View method.
+We simply need to return a string here, and bubbletea takes care of the rest.
+This is roughly how our code will look like.
+
+---
+
+Let's start writing the app!
+
+
 
 
