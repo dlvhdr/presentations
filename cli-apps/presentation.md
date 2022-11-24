@@ -89,6 +89,13 @@ date: "DD MMMM, YYYY"
 tmux set mouse on; tmux splitw -v bash -c "draw"
 ```
 
+#### How does this work?
+
+* The terminal sends a special code on stdin (an escape sequence) with the mouse coordinates
+  * The code is an Xterm control sequence
+  * The last release of X10 was December 1986, _by the way_.
+  * More on that later
+
 ---
 
 # The Reinassance of the Command Line
@@ -101,6 +108,9 @@ tmux set mouse on; tmux splitw -v bash -c "draw"
 tmux splitw -v -l 30 bash -c "confetty"
 ```
 
+* Faster terminal emulators will support higher FPS and redraws
+* Modern emulators use GPU rendering
+
 ---
 
 # The Reinassance of the Command Line
@@ -112,6 +122,20 @@ tmux splitw -v -l 30 bash -c "confetty"
 ```bash
 bat -f ./magic-tldr.sh
 tmux splitw -h -l 50 "~/code/personal/playground/gum/examples/magic.sh"
+```
+
+---
+
+# The Reinassance of the Command Line
+
+## Examples of CLI apps
+
+fzf, zoxide, brew, exa, tldr, fnm, jq, bat, entr, lazygit, tig, ...
+
+### Quick Demo
+
+```bash
+tmux splitw -h -l 50
 ```
 
 ---
@@ -143,6 +167,34 @@ tmux splitw 'gh search prs "org:wix-private" --limit 5; fish -i'
 tmux neww -n "gh dash" gh dash
 ```
 
+---
+
+# The Reinassance of the Command Line
+
+## How do CLI apps Works
+
+> This is a very gross oversimplifications
+
+### The Terminal
+
+* The **terminal emulator** is an app on your computer that shows a GUI window, and in it renders text
+* When the terminal starts, it runs your configured program called the **shell**
+  * Can change with the `chsh` command
+* The terminal is also responsible for sending the current program the user interactions like mouse clicks, keyboard events etc.
+
+### The Shell
+
+* The shell is a program that:
+  * reads a stream of characters from stdin
+  * parses it 
+  * and runs the appropriate commands entered by the user
+* When it loads it prints the **prompt** (`$`)
+* It first forks the process and connects stdin, stdout and stderr
+* Most shells follow the UNIX standard and support a set of capabilities like
+  * variables, loops, pipes, globs
+
+> Of course there is a lot more complexity like tty and pty device drivers 
+> and how terminals choose to efficiently render the text to the screen
 
 ---
 
@@ -272,10 +324,10 @@ E.g:
 
 ```bash
 tmux splitw -v -l 20 fish -c "\
-      cd ~/code/personal/roulette;\
-      git checkout tutorial/03-finished 2>1 /dev/null;\
-      go run . 🍕 🍔 🥓 🌯 🥒 🍗;
-      sleep 1"
+    cd ~/code/personal/roulette;\
+    git checkout -qf tutorial/03-finished;\
+    go run . 🍕 🍔 🥓 🌯 🥒 🍗;\
+    sleep 10"
 ```
 
 ---
@@ -314,16 +366,16 @@ tmux splitw -v -l 35 ssh git.charm.sh
 
 # The Reinassance of the Command Line
 
-## Writing a Roulette
+## Why Go  ?
 
-Now, to use Charm's libs we need some Go knowledge.
+Now, to use Charm's libs we need some **Go knowledge**.
 Why Go for CLI apps?
-* Modern language with garbage collection, `goroutines`, `channels`, ...
-* Compiles into a single binary - trivial installation 
-* Fast to run - important for CLI apps
-* Works across platforms with a consistent style
-* Strong development community (`charm`, `cobra`, `viper`...)
-* Builtin tooling: linter, formatter, package manager - all consistent
+* ⚙️ Compiles into a single binary - trivial installation 
+* ⚡️ Fast to run - important for CLI apps
+* 🖥  Works across platforms with a consistent style
+* 💪 Strong development community (`charm`, `cobra`, `viper`...)
+* 🔧 Builtin tooling: linter, formatter, package manager - all consistent
+* 🚀 Modern language with garbage collection, `goroutines`, `channels`, ...
 
 ```bash
 tmux neww -n "Learning Go" "curl cheat.sh/go/:learn | less -r"
